@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS bands (
+  id TEXT PRIMARY KEY NOT NULL,
+  name TEXT NOT NULL COLLATE NOCASE UNIQUE,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS accounts (
+  id TEXT PRIMARY KEY NOT NULL,
+  username TEXT NOT NULL COLLATE NOCASE UNIQUE,
+  role TEXT NOT NULL CHECK (role IN ('admin', 'band')),
+  band_id TEXT REFERENCES bands(id) ON DELETE CASCADE,
+  salt TEXT NOT NULL,
+  password_hash TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CHECK ((role = 'admin' AND band_id IS NULL) OR (role = 'band' AND band_id IS NOT NULL))
+);
+
+CREATE TABLE IF NOT EXISTS band_data (
+  band_id TEXT PRIMARY KEY NOT NULL REFERENCES bands(id) ON DELETE CASCADE,
+  data_json TEXT NOT NULL DEFAULT '{}',
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS accounts_band_id_idx ON accounts(band_id);
