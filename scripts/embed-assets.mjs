@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const root = new URL("../", import.meta.url);
-const entries = ["index.html", "styles.css", "auth.css", "app.js", "auth.js"];
+const entries = ["index.html", "styles.css", "auth.css", "app.js", "auth.js", "favicon.svg"];
 const assets = {};
 for (const name of entries) {
   assets[name] = Buffer.from(await readFile(new URL(`web/${name}`, root))).toString("base64");
