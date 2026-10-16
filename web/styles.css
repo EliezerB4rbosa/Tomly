@@ -3,3 +3,107 @@
 .message-format-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 7px;color:#c4d4c8;font-size:9px}
 .message-format-toolbar .text-link{background:#fff;border-radius:6px;padding:6px 9px;color:#345b4b}
 .message-text{display:block;width:100%;border:0;resize:vertical;font:inherit;font-size:10px;line-height:1.6;min-height:280px}
+/* Mobile layout refinements */
+@media(max-width:760px){
+  .app-shell{min-height:100svh}
+  .main-area{width:100%;max-width:100%;min-width:0;margin-left:0;padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+  .topbar{height:58px;padding:0 14px;position:sticky;top:0;z-index:15}
+  .page-content{width:100%;max-width:none;margin:0;padding:22px 14px calc(88px + env(safe-area-inset-bottom))}
+  .page-heading{flex-direction:column;align-items:stretch;gap:13px;margin-bottom:18px}
+  .page-heading>div{min-width:0}
+  .page-heading h1,.welcome-row h1{font-size:clamp(22px,6vw,26px);line-height:1.18;letter-spacing:-.7px}
+  .page-heading p,.welcome-row p{font-size:12px;line-height:1.5}
+  .page-heading>.secondary-button{width:100%;justify-content:center}
+  .page-heading .head-actions{display:grid;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .page-heading .head-actions .secondary-button{display:inline-flex;justify-content:center;white-space:normal;text-align:center}
+  .page-heading .head-actions .primary-button{justify-content:center;white-space:normal;text-align:center}
+  .primary-button,.secondary-button,.soft-button{min-height:42px;padding:10px 12px;font-size:11px}
+  .toolbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:13px}
+  .search-box{grid-column:1/-1;width:100%;max-width:none;min-width:0;height:42px}
+  .toolbar .select-box{width:100%;min-width:0;height:42px;padding:0 9px}
+  .songs-grid,.scales-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .song-card{min-width:0;padding:12px}
+  .song-card h3,.song-card p{overflow-wrap:anywhere}
+  .song-meta{gap:6px;align-items:flex-start}
+  .folder-tag{min-width:0;overflow-wrap:anywhere}
+  .scale-card{min-width:0;padding:13px}
+  .member-count{line-height:1.4;overflow-wrap:anywhere}
+  .recent-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+  .stats-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .stat-card{min-width:0;flex-direction:column;align-items:flex-start;gap:7px;padding:10px}
+  .stat-card small{line-height:1.3}
+  .repertoire-layout{grid-template-columns:minmax(0,1fr);gap:12px}
+  .repertoire-editor{min-width:0;padding:13px}
+  .form-row{grid-template-columns:minmax(0,1fr);gap:0}
+  .field{min-width:0}
+  .field input,.field select,.field textarea{min-height:42px;font-size:13px}
+  .set-group{min-width:0;padding:10px}
+  .repertoire-song{grid-template-columns:minmax(0,1fr) 64px 24px;gap:5px}
+  .repertoire-song select{width:100%;min-width:0;min-height:40px;padding:6px;font-size:11px}
+  .repertoire-song button{min-height:40px}
+  .manual-song-form{grid-template-columns:minmax(0,1fr) 68px;gap:6px}
+  .manual-song-suggestions{max-height:34svh}
+  .message-preview{position:static;min-width:0;padding:14px}
+  .message-format-toolbar{align-items:flex-start;line-height:1.4}
+  .message-format-toolbar span{max-width:65%}
+  .message-text{width:100%;min-height:260px;height:38svh;max-height:440px;font-size:12px;overflow-wrap:anywhere}
+  .editor-shell{min-width:0;overflow:hidden}
+  .editor-header{flex-direction:column;align-items:stretch;gap:12px;padding:14px}
+  .editor-header h2{min-width:0}
+  .editor-header h2 input{max-width:100%;width:100%!important;font-size:16px!important}
+  .editor-header p input{max-width:100%;width:100%}
+  .editor-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:8px}
+  .editor-actions button{min-width:0;min-height:42px;justify-content:center;white-space:normal}
+  .editor-body{grid-template-columns:minmax(0,1fr);min-width:0}
+  .lyric-pane{min-width:0;padding:13px}
+  .lyric-pane textarea{width:100%;min-height:280px;height:42svh;font-size:14px}
+  .lyric-pane .field{flex-wrap:wrap}
+  .lyric-pane .field label{width:100%}
+  .lyric-pane .field .select-box{flex:0 0 100px}
+  .source-link{min-width:0;overflow-wrap:anywhere}
+  .instrument-pane{min-width:0;padding:13px}
+  .instrument-tabs{gap:6px}
+  .instrument-tab{min-height:38px;padding:8px;font-size:10px}
+  .editor-toolbar{gap:6px;padding:10px}
+  .tool-chip{min-height:38px;padding:8px;font-size:10px}
+  .modal-backdrop{place-items:end center;padding:10px 10px env(safe-area-inset-bottom)}
+  .modal{width:100%;max-height:90svh;border-radius:16px 16px 10px 10px;padding:20px 16px}
+  .modal-footer{flex-wrap:wrap}
+  .modal-footer button{flex:1 1 120px;justify-content:center}
+  .mobile-nav{height:calc(62px + env(safe-area-inset-bottom));padding:5px 6px env(safe-area-inset-bottom);}
+  .mobile-nav button{flex:1;min-width:0;min-height:48px;padding:3px;font-size:9px}
+  .toast{left:14px;right:14px;bottom:calc(74px + env(safe-area-inset-bottom));width:auto;max-width:440px;transform:translateY(12px)}
+  .toast.show{transform:translateY(0)}
+  .sidebar{width:min(290px,86vw);height:100svh;overflow-y:auto;padding-top:max(20px,env(safe-area-inset-top))}
+}
+@media(max-width:430px){
+  .page-content{padding-left:12px;padding-right:12px}
+  .songs-grid,.scales-grid{grid-template-columns:minmax(0,1fr)}
+  .stats-grid{grid-template-columns:minmax(0,1fr)}
+  .stat-card{flex-direction:row;align-items:center;padding:10px 12px}
+  .welcome-row{gap:8px}
+  .welcome-row>.primary-button{flex:0 0 auto}
+  .setlist-head{gap:8px}
+  .repertoire-song{grid-template-columns:minmax(0,1fr) 58px 22px}
+  .message-format-toolbar{font-size:8px}
+  .message-text{font-size:11px}
+  .mobile-nav button{font-size:8px}
+}
+@media(max-width:350px){
+  .page-content{padding-left:10px;padding-right:10px}
+  .repertoire-song{grid-template-columns:minmax(0,1fr) 52px 20px;gap:4px}
+  .page-heading .head-actions{grid-template-columns:minmax(0,1fr)}
+  .editor-actions{grid-template-columns:minmax(0,1fr)}
+}
+@media(min-width:761px) and (max-width:980px){
+  .sidebar{width:210px;padding-left:14px;padding-right:14px}
+  .main-area{margin-left:210px}
+  .topbar{padding:0 22px}
+  .page-content{padding:30px 22px 60px}
+  .repertoire-layout{grid-template-columns:minmax(0,1fr) 280px;gap:12px}
+  .repertoire-editor{padding:15px}
+  .repertoire-song{grid-template-columns:minmax(0,1fr) 62px 22px;gap:5px}
+  .message-preview{padding:14px}
+  .editor-body{grid-template-columns:minmax(0,1fr) 220px}
+  .instrument-pane{padding:13px}
+}
