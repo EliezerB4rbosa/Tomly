@@ -74,4 +74,20 @@
   .score-lines.two-columns .score-lyric{white-space:pre-wrap;overflow-wrap:anywhere}
   .score-chord{color:var(--chord-color,#27845c)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+.song-card-identification{display:flex;align-items:center;gap:9px;min-width:0}
+.song-status-badge{display:inline-flex;align-items:center;width:max-content;max-width:100%;padding:5px 8px;border-radius:999px;font-size:9px;line-height:1.1;font-weight:800;white-space:nowrap}
+.song-status-badge.in-repertoire{background:#e5f1e7;color:#346447}
+.song-status-badge.for-rehearsal{background:#fff0ce;color:#835711}
+.song-status-badge.retired{background:#ecefed;color:#67736b}
+.song-status-badge.compact{padding:4px 7px;font-size:8px}
+.song-card.status-card-in-repertoire{border-left:3px solid #6b9b73}
+.song-card.status-card-for-rehearsal{border-left:3px solid #d3a343}
+.song-card.status-card-retired{border-left:3px solid #a3aca5;background:#fafbf9}
+.song-card.status-card-retired h3,.song-card.status-card-retired>p{color:#77827a}
+.song-status-row{display:flex;align-items:center;gap:11px;flex-wrap:wrap;padding:11px 20px;border-bottom:1px solid var(--line);background:#fff}
+.song-status-row>label{font-size:10px;font-weight:800;color:#596f60}
+.song-status-row select{min-width:170px;height:35px;padding:0 10px;border:1px solid #dfe6de;border-radius:7px;background:#fff;color:#3f5748;font-size:11px;font-weight:700}
+.song-status-note{font-size:10px;color:#8a968c}
+.song-row .song-status-badge{flex:0 0 auto}
+@media(max-width:760px){.song-status-row{align-items:flex-start;padding:11px 13px}.song-status-row>label{flex:0 0 100%}.song-status-row select{flex:1;min-width:0;max-width:220px}.song-status-note{flex:1 1 100%;line-height:1.4}.song-card-identification{gap:6px}.song-status-badge{font-size:8px;padding:5px 7px}.song-row .song-status-badge{display:none}}
 
